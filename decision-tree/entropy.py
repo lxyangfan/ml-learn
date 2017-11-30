@@ -1,6 +1,18 @@
 #encoding=utf-8
 import math
 import pdb
+import pandas as pd
+
+
+# def gen_P_x(df=None):
+#     """ 计算每个特征的概率 P（X=xi）,并返回一个DataFrame """
+#     if df == None:
+#         df = pd.DataFrame()
+#     P_x = dict()
+#     raw_num = loans.shape[0]
+#     for X in loans.columns:
+#         P_x[X] = loans[X].value_counts().apply(lambda x: float(x)/raw_num)
+#     return P_x
 
 def entropy(p=None):
     """计算信息熵，p是float list,表示离散随机变量的概率分布"""
@@ -44,7 +56,7 @@ def info_gain(px=None,py=None, p_xy=None):
     return h_y - h_xy
         
 
-print info_gain([9.0/15, 6.0/15],[9.0/15, 6.0/15],[[1.0, 1.0/3], [0, 2.0/3]])
+print entropy([0.8, 0.2])
     
     
     
